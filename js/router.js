@@ -11,7 +11,7 @@ Todos.Router.map(function () {
 Todos.TodosRoute = Ember.Route.extend({
 	model: function () {
 		return Todos.Todo.find();
-	}
+	},	
 });
 
 Todos.TodosIndexRoute = Ember.Route.extend({

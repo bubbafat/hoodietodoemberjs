@@ -3,9 +3,9 @@
 
 Todos.Store = DS.Store.extend({
 	revision: 12,
-	adapter: 'Todos.LSAdapter'
+	adapter: 'Todos.HoodieAdapter'
 });
 
-Todos.LSAdapter = DS.LSAdapter.extend({
-	namespace: 'todos-emberjs'
+Todos.HoodieAdapter = DS.HoodieAdapter.extend({
+	namespace: 'todosemberjs'
 });

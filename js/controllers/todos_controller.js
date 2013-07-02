@@ -55,5 +55,23 @@ Todos.TodosController = Ember.ArrayController.extend({
 			return !!this.get('length') &&
 				this.everyProperty('isCompleted', true);
 		}
-	}.property('@each.isCompleted')
+	}.property('@each.isCompleted'),
+	
+	init: function() {
+		var self = this;
+
+		// user signed-up or signed-in
+		hoodie.account.on('signin', function (user) {
+			location.reload();
+		});
+
+		hoodie.account.on('signup', function (user) {
+			location.reload();
+		});
+
+		// user has signed out
+		hoodie.account.on('signout', function (user) {
+			location.reload();
+		});
+	},
 });
